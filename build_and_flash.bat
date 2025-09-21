@@ -1,4 +1,4 @@
-cd armgcc
+cd examples/tinyML_test
 rmdir /s /q build
 mkdir build
 cd build

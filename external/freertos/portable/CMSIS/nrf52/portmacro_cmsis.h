@@ -29,7 +29,7 @@
 #ifndef PORTMACRO_CMSIS_H
 #define PORTMACRO_CMSIS_H
 #include "app_util.h"
-
+#include "FreeRTOSConfig.h"
 #ifdef __cplusplus
 extern "C" {
 #endif
