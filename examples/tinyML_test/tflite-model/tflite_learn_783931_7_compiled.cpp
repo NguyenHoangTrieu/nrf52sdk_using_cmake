@@ -87,6 +87,9 @@ extern void ei_printf(const char *format, ...);
 #define EI_MAX_OVERFLOW_BUFFER_COUNT 10
 #endif // EI_MAX_OVERFLOW_BUFFER_COUNT
 
+#define EI_CLASSIFIER_ALLOCATION_STATIC 1
+#define EI_DSP_IMAGE_BUFFER_STATIC_SIZE 4096
+
 using namespace tflite;
 using namespace tflite::ops;
 using namespace tflite::ops::micro;
@@ -94,9 +97,9 @@ using namespace tflite::ops::micro;
 namespace {
 
 #if defined(EI_CLASSIFIER_ALLOCATION_STATIC_HIMAX) || defined(EI_CLASSIFIER_ALLOCATION_STATIC_HIMAX_GNU)
-constexpr int kTensorArenaSize = 1408;
+constexpr int kTensorArenaSize = 65536;
 #else
-constexpr int kTensorArenaSize = 384;
+constexpr int kTensorArenaSize = 65536;
 #endif
 
 #if defined(EI_CLASSIFIER_ALLOCATION_STATIC)

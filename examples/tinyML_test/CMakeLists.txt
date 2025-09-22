@@ -71,6 +71,12 @@ set(SRC_FILES
     ${SDK_ROOT}/modules/nrfx/drivers/src/nrfx_uart.c
     ${SDK_ROOT}/modules/nrfx/drivers/src/nrfx_uarte.c
     ${SDK_ROOT}/modules/nrfx/drivers/src/prs/nrfx_prs.c
+
+    #I2C source files
+    ${SDK_ROOT}/integration/nrfx/legacy/nrf_drv_twi.c
+    ${SDK_ROOT}/modules/nrfx/drivers/src/nrfx_twi.c
+    ${SDK_ROOT}/modules/nrfx/drivers/src/nrfx_twim.c
+    ${SDK_ROOT}/modules/nrfx/drivers/src/prs/nrfx_prs.c
     
     # Clock and power management
     ${SDK_ROOT}/integration/nrfx/legacy/nrf_drv_clock.c
@@ -252,6 +258,7 @@ target_compile_options(${TARGET} PRIVATE
     -Wno-unused-variable
     -Wno-sign-compare
     -Wno-maybe-uninitialized
+    -Wno-unused-but-set-variable
     -Wall
     -Werror
     -mfloat-abi=hard
